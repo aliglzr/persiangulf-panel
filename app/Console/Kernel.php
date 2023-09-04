@@ -29,26 +29,7 @@ class Kernel extends ConsoleKernel
      * @param Schedule $schedule
      * @return void
      */
-    protected function schedule(Schedule $schedule): void {
-        if (true){
-            if (config('services.backup.take_backup_in_schedule')){
-                $schedule->command('backup:clean')->dailyAt(config('services.backup.clean_backup_daily_at'));
-                $schedule->command('backup:run')->dailyAt(config('services.backup.take_backup_daily_at'));
-            }
-            $schedule->job(new RejectUnpaidPayments())->everyMinute();
-            $schedule->job(new CheckSubscriptions())->everyMinute();
-            $schedule->job(new SendSubscriptionNotification())->everyMinute();
-            $schedule->call(function (){
-                CreateTrafficUsage::dispatch()->onConnection('redis')->onQueue('traffic');
-            })->everyFiveMinutes();
-//            $schedule->call(function (){
-//                GetLoadAttribute::dispatch()->onConnection('redis')->onQueue('default');
-//            })->everyMinute();
-            $schedule->call(function (){
-                DatabaseNotification::where('created_at','<',now()->subMonth())->delete();
-            })->daily();
-        }
-    }
+    protected function schedule(Schedule $schedule): void { }
 
     /**
      * Register the commands for the application.

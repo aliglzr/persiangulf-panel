@@ -1,6 +1,6 @@
 <?php
 
-namespace App\DataTables\Agents;
+namespace App\DataTables\Users;
 
 use App\Core\Extensions\Datatable;
 use App\Core\Extensions\Verta\Verta;
@@ -12,7 +12,7 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 
 
-class AgentsDatatable extends DataTable
+class UsersDatatable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -24,21 +24,21 @@ class AgentsDatatable extends DataTable
     {
         return datatables()
             ->collection($query)
-            ->rawColumns(['active','2fa_status','username','reference_id'])
+            ->rawColumns([ 'active','2fa_status','username'])
             ->editColumn('id', function (User $model) {
                 return convertNumbers($model->id);
             })
             ->editColumn('username',function (User $model){
-                return '<a href="'.route('agents.overview',$model).'" class="fw-bold">' .$model->username . '</a>';
+                return '<a href="'.route('managers.overview',$model).'" class="fw-bold">' .$model->username . '</a>';
             })
             ->editColumn('created_at', function (User $model) {
-                return Verta::instance($model->created_at)->persianFormat('j F Y H:i:s');
+                    return Verta::instance($model->created_at)->persianFormat('j F Y H:i:s');
             })
             ->addColumn('last_login', function (User $model) {
-                return Verta::instance($model->getData('last_login'))->persianFormat('j F Y H:i:s');
+                    return Verta::instance($model->getData('last_login'))->persianFormat('j F Y H:i:s');
             })
-            ->addColumn('reference_id', function (User $model) {
-                return $model?->introducer ? '<a href="'.route('agents.overview',$model->introducer).'" class="fw-bold">' .$model->introducer->username . '</a>' : '<div class="fw-bold">اصلی</div>' ;
+            ->addColumn('2fa_status', function (User $model) {
+                return $model->has2faEnabled() ? '<span class="badge badge-light-success">فعال</span>' : '<span class="badge badge-light-danger">غیر فعال</span>';
             });
     }
 
@@ -50,7 +50,7 @@ class AgentsDatatable extends DataTable
      */
     public function query(User $model)
     {
-        return User::role('agent')->get();
+        return User::role('manager')->get();
     }
 
     /**
@@ -61,7 +61,7 @@ class AgentsDatatable extends DataTable
     public function html()
     {
         return $this->builder()
-            ->setTableId('agents-table')
+            ->setTableId('managers-table')
             ->columns($this->getColumns())
             ->languageUrl($this->setLanguageUrl())
             ->minifiedAjax()
@@ -85,8 +85,8 @@ class AgentsDatatable extends DataTable
             Column::make('first_name')->title(__('نام')),
             Column::make('last_name')->title(__('نام خانوادگی')),
             Column::make('username')->title('نام کاربری'),
-            Column::make('reference_id')->title('معرف'),
             Column::make('email')->title('نشانی ایمیل'),
+            Column::make('2fa_status')->title('احراز هویت دو عاملی'),
             Column::make('created_at')->title('تاریخ عضویت'),
             Column::make('last_login')->title('آخرین ورود'),
 //            Column::make('properties')->addClass('none'),
@@ -100,6 +100,6 @@ class AgentsDatatable extends DataTable
      */
     protected function filename()
     {
-        return 'Agents_' . date('YmdHis');
+        return 'Managers_' . date('YmdHis');
     }
 }

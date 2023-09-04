@@ -230,26 +230,6 @@ if (!function_exists('formatBytes')) {
     }
 }
 
-if (!function_exists('getRequestUri')) {
-    function getRequestUri(string $url)
-    {
-        $uri = explode('/', $url);
-        unset($uri[0]);
-        unset($uri[1]);
-        unset($uri[2]);
-        return '/' . implode('/', $uri);
-    }
-}
-
-
-if (!function_exists('applyDynamicHost')) {
-    function applyDynamicHost($host)
-    {
-        app('url')->forceRootUrl("https://" . $host . "/");
-    }
-}
-
-
 if (!function_exists('std_to_array')) {
     function std_to_array(object $stdClass)
     {
@@ -263,14 +243,6 @@ if (!function_exists('convertNumbers')) {
         $num_a = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
         $key_a = array('۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹');
         return ($mod == 'fa') ? str_replace($num_a, $key_a, $string) : str_replace($key_a, $num_a, $string);
-    }
-}
-if (!function_exists('ip_range')) {
-    function ip_range($start, $end): array
-    {
-        $start = ip2long($start);
-        $end = ip2long($end);
-        return array_map('long2ip', range($start, $end));
     }
 }
 if (!function_exists('string_to_color')) {
@@ -288,16 +260,5 @@ if (!function_exists('string_to_color')) {
         return $colour;
     }
 
-}
-
-if (!function_exists('countryToFlag')) {
-    function countryToFlag(string $countryCode): string
-    {
-        return (string)preg_replace_callback(
-            '/./',
-            static fn(array $letter) => mb_chr(ord($letter[0]) % 32 + 0x1F1E5),
-            $countryCode
-        );
-    }
 }
 

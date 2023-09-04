@@ -18,7 +18,7 @@
         <!--begin::Heading-->
         <div class="text-center mb-11">
             <!--begin::Title-->
-            <h1 class="text-dark fw-bolder mb-3">ورود</h1>
+            <h1 class="text-dark fw-bolder mb-3">ورود به کنترل پنل</h1>
             <!--end::Title-->
         </div>
         <!--begin::Heading-->

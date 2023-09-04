@@ -19,8 +19,6 @@ use Lukeraymonddowning\Honey\Traits\WithHoney;
 
 class ForgotPassword extends Component
 {
-    use withHoney;
-
     public string $email = '';
     public string $token = '';
     public string $password = '';

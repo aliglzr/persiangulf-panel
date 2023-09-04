@@ -1,0 +1,1 @@
+window.lightWeightChart = require('lightweight-charts');

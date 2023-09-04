@@ -1,0 +1,28 @@
+<?php
+/** @noinspection SpellCheckingInspection */
+return [
+    "Farvardin" => "فروردین",
+    "Ordibehesht" => "اردیبهشت",
+    "Khordad" => "خرداد",
+    "Tir" => "تیر",
+    "Mordad" => "مرداد",
+    "Shahrivar" => "شهریور",
+    "Mehr" => "مهر",
+    "Aban" => "آبان",
+    "Azar" => "آذر",
+    "Dey" => "دی",
+    "Bahman" => "بهمن",
+    "Esfand" => "اسفند",
+    "January" => "ژانویه",
+    "February" => "فوریه",
+    "March" => "مارس",
+    "April" => "آوریل",
+    "May" => "می",
+    "June" => "ژوئن",
+    "July" => "جولای",
+    "August" => "آگوست",
+    "September" => "سپتامبر",
+    "October" => "اکتبر",
+    "November" => "نوامبر",
+    "December" => "دسامبر",
+];

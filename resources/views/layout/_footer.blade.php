@@ -4,8 +4,8 @@
 	<div class="{{ theme()->printHtmlClasses('footer-container', false) }} d-flex flex-column flex-md-row align-items-center justify-content-between">
 		<!--begin::Copyright-->
 		<div class="text-dark order-2 order-md-1">
-			<span class="text-muted fw-bold me-1 user-select-none">{{ date("2022-Y") }}&copy;</span>
-			<a href="{{ theme()->getOption('general', 'website') }}" target="_blank" class="text-gray-800 text-hover-primary">SolidVPN</a>
+			<span class="text-muted fw-bold me-1 user-select-none">&copy; {{ \App\Core\Extensions\Verta\Verta::now()->persianFormat('1401-Y') }}</span>
+			<a href="{{ theme()->getOption('general', 'website') }}" target="_blank" class="text-gray-800 text-hover-primary">PersianGulf Group</a>
 		</div>
 		<!--end::Copyright-->
 

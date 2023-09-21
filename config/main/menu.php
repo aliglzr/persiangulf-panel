@@ -26,7 +26,6 @@ return array(
         // Managers
         'managers'    => array(
             "title"      => "اعضا",
-            'role'       => 'manager',
             "icon"       => '<i class="bi bi-people-fill fs-2"></i>',
             "classes"    => array(
                 "item" => "py-2",
@@ -56,7 +55,6 @@ return array(
                     array(
                         'title'      => 'لیست مدیران',
                         'path'       => 'managers',
-                        'role'       => 'manager',
                         'bullet'     => '<span class="bullet bullet-dot"></span>',
                         'attributes' => array(
                             'link' => array(
@@ -71,7 +69,6 @@ return array(
                     array(
                         'title'      => 'لیست نمایندگان',
                         'path'       => 'agents',
-                        'permission' => 'view-agent-table',
                         'bullet'     => '<span class="bullet bullet-dot"></span>',
                         'attributes' => array(
                             'link' => array(
@@ -86,7 +83,6 @@ return array(
                     array(
                         'title'      => 'لیست مشتریان',
                         'path'       => 'clients',
-                        'permission' => 'view-client-table',
                         'bullet'     => '<span class="bullet bullet-dot"></span>',
                         'attributes' => array(
                             'link' => array(
@@ -148,7 +144,7 @@ return array(
 //                    ),
 //                    array(
 //                        'title'  => 'افزودن نماینده جدید',
-//                        'permission'  => 'create-agent',
+//
 //                        'path'   => '/agents/create',
 //                        'bullet' => '<span class="bullet bullet-dot"></span>',
 //                    ),
@@ -189,7 +185,6 @@ return array(
                     array(
                         'title'      => 'لیست طرح ها',
                         'path'       => 'plans',
-                        'role'           => 'manager',
                         'bullet'     => '<span class="bullet bullet-dot"></span>',
                         'attributes' => array(
                             'link' => array(
@@ -204,7 +199,6 @@ return array(
                     array(
                         'title'      => 'تغییر قیمت',
                         'path'       => '#',
-                        'role'       => 'manager',
                         'bullet'     => '<span class="bullet bullet-dot"></span>',
                         'attributes' => array(
                             'link' => array(
@@ -217,7 +211,6 @@ return array(
                     array(
                         'title'      => 'خرید طرح',
                         'path'       => 'plans/buy',
-                        'role'       => 'agent',
                         'bullet'     => '<span class="bullet bullet-dot"></span>',
                         'attributes' => array(
                             'link' => array(
@@ -232,7 +225,6 @@ return array(
                     array(
                         'title'      => 'ثبت اشتراک',
                         'path'       => '#',
-                        'role'       => 'agent',
                         'bullet'     => '<span class="bullet bullet-dot"></span>',
                         'attributes' => array(
                             'link' => array(
@@ -245,7 +237,6 @@ return array(
                     array(
                         'title'      => 'ثبت مشتری',
                         'path'       => '#',
-                        'role'       => 'agent',
                         'bullet'     => '<span class="bullet bullet-dot"></span>',
                         'attributes' => array(
                             'link' => array(
@@ -293,7 +284,6 @@ return array(
                     array(
                         'title'      => 'خرید اشتراک',
                         'path'       => 'buy',
-                        'role'           => 'client',
                         'bullet'     => '<span class="bullet bullet-dot"></span>',
                         'attributes' => array(
                             'link' => array(
@@ -308,7 +298,6 @@ return array(
                     array(
                         'title'      => 'اشتراک ها',
                         'path'       => 'my-subscriptions',
-                        'role'       => 'client',
                         'bullet'     => '<span class="bullet bullet-dot"></span>',
                         'attributes' => array(
                             'link' => array(
@@ -327,7 +316,7 @@ return array(
         // Plans
         'discount_vouchers'    => array(
             "title"      => "تخفیف",
-            'permission' => 'view-discount-table',
+
             "icon"       => '<i class="bi bi-percent fs-2"></i>',
             "classes"    => array(
                 "item" => "py-2",
@@ -404,7 +393,6 @@ return array(
                     array(
                         'title'      => 'لیست پرداختی ها',
                         'path'       => 'payments',
-                        'permission' => 'view-payment-table',
                         'bullet'     => '<span class="bullet bullet-dot"></span>',
                         'attributes' => array(
                             'link' => array(
@@ -419,7 +407,6 @@ return array(
                     array(
                         'title'      => 'لیست صورتحساب ها',
                         'path'       => 'invoices',
-                        'permission' => 'view-invoice-table',
                         'bullet'     => '<span class="bullet bullet-dot"></span>',
                         'attributes' => array(
                             'link' => array(
@@ -434,7 +421,6 @@ return array(
                     array(
                         'title'      => 'لیست تراکنش ها',
                         'path'       => 'transactions',
-                        'permission' => 'view-transaction-table',
                         'bullet'     => '<span class="bullet bullet-dot"></span>',
                         'attributes' => array(
                             'link' => array(
@@ -449,7 +435,6 @@ return array(
                     array(
                         'title'      => 'پرداختی ها',
                         'path'       => 'my-payments',
-                        'role'       => array('client','agent'),
                         'bullet'     => '<span class="bullet bullet-dot"></span>',
                         'attributes' => array(
                             'link' => array(
@@ -464,7 +449,6 @@ return array(
                     array(
                         'title'      => 'صورتحساب ها',
                         'path'       => 'my-invoices',
-                        'role'       => array('client','agent'),
                         'bullet'     => '<span class="bullet bullet-dot"></span>',
                         'attributes' => array(
                             'link' => array(
@@ -479,7 +463,6 @@ return array(
                     array(
                         'title'      => 'تراکنش ها',
                         'path'       => 'my-transactions',
-                        'role'       => array('client','agent'),
                         'bullet'     => '<span class="bullet bullet-dot"></span>',
                         'attributes' => array(
                             'link' => array(
@@ -498,7 +481,6 @@ return array(
         // Servers
         'servers'   => array(
             "title"      => "سرور",
-            "permission"      => "view-server-table",
             "icon"       => '<i class="bi bi-server fs-2"></i>',
             "classes"    => array(
                 "item" => "py-2",
@@ -527,19 +509,16 @@ return array(
 
                     array(
                         'title'  => 'لیست سرور ها',
-                        'permission' => 'view-server-table',
                         'path'   => 'servers',
                         'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),
                     array(
                         'title'  => 'لیست لایه ها',
-                        'permission'  => 'view-layer-table',
                         'path'   => 'layers',
                         'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),
                     array(
                         'title'  => 'لیست دامنه ها',
-                        'permission'  => 'view-domain-table',
                         'path'   => 'domains',
                         'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),
@@ -604,19 +583,16 @@ return array(
                     ),
                     array(
                         'title'  => 'لاگ ها',
-                        'permission'  => 'view-user-log',
                         'path'   => 'system/logs',
                         'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),
                     array(
                         'title'  => 'لاگ سیستم',
-                        'role'  => 'manager',
                         'path'   => 'system',
                         'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),
                     array(
                         'title'  => 'دسترسی',
-                        'role'  => 'manager',
                         'path'   => 'roles',
                         'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),
@@ -656,7 +632,7 @@ return array(
 //
 //                    array(
 //                        'title'      => 'لیست ایمیل ها',
-//                        'role'      => 'manager',
+//
 //                        'path'       => '/mailables',
 //                        'bullet'     => '<span class="bullet bullet-dot"></span>',
 //                        'attributes' => array(
@@ -671,7 +647,7 @@ return array(
 //                    array(
 //                        'title'      => 'لیست قالب ها',
 //                        'path'       => '/mailables/templates',
-//                        'role'      => 'manager',
+//
 //                        'bullet'     => '<span class="bullet bullet-dot"></span>',
 //                        'attributes' => array(
 //                            'link' => array(
@@ -734,7 +710,6 @@ return array(
                     ),
                     array(
                         'title'  => 'آموزش',
-                        'role'  => 'manager',
                         'path'   => 'support/tutorials',
                         'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),

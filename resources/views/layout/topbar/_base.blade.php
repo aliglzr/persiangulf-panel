@@ -9,35 +9,12 @@
 <!--begin::Toolbar wrapper-->
 <div class="d-flex align-items-stretch flex-shrink-0">
 
-@if(auth()->user()->isAgent() || auth()->user()->isClient())
-    <!--begin::Wallet Balance-->
-        <div class="d-flex align-items-center {{ $toolbarButtonMarginClass }}">
-            {{ theme()->getView('partials/wallet-balance/_main', ['params' => [
-                'toggle-btn-class' => $btnClass
-            ]]) }}
-        </div>
-        <!--end::Wallet Balance-->
-@endif
 
     <!--begin::Theme mode-->
     <div class="d-flex align-items-center {{ $toolbarButtonMarginClass }}">
         <livewire:layout.theme-mode />
     </div>
-    <!--end::Theme mode
-
-    <--begin::Notifications-->
-    <div class="d-flex align-items-center {{ $toolbarButtonMarginClass }}">
-        <!--begin::Menu- wrapper-->
-        <div class="btn btn-icon btn-active-light-primary position-relative {{ $toolbarButtonHeightClass }}"
-             data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-            <i class="bi bi-bell fs-2"></i>
-        </div>
-        <livewire:layout.topbar.notifications />
-{{--    {{ theme()->getView('partials/topbar/_notifications-menu')  }}--}}
-    <!--end::Menu wrapper-->
-    </div>
-    <!--end::Notifications-->
-
+    <!--end::Theme mode-->
 
 
     <!--begin::User-->

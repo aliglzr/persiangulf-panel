@@ -70,7 +70,7 @@
 
 </div>
 @section('title')
-    ورود
+    ورود به کنترل پنل
 @endsection
 @section('description')
     ورود به کنترل پنل

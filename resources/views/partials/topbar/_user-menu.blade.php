@@ -13,24 +13,9 @@
             <!--begin::Username-->
             <div class="d-flex flex-column">
                 <div class="fw-bolder d-flex align-items-center fs-5">
-                    @if(!auth()->user()->isClient())
                         {{ auth()->user()->fullname }}
-                    @else
-                        {{ strtoupper(auth()->user()->username) }}
-                    @endif
-                    <span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2 user-select-none">{{ auth()->user()->getRole('slug') }}</span>
+                    <span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2 user-select-none">مدیریت</span>
                 </div>
-                @if(!auth()->user()->isClient())
-                    <a href="{{auth()->user()->getProfileLink()}}"
-                       class="fw-bold text-muted text-hover-primary fs-7">{{ strtoupper(auth()->user()->username) }}</a>
-                @endif
-                @if(auth()->user()?->introducer?->username != 'solidvpn_sales')
-                    @role('client')
-                    <span data-bs-toggle="tooltip" title="معرف شما"
-                          class="fw-bold text-muted text-hover-primary fs-7 user-select-none"><i
-                                class="fa fa-user-tie me-2"></i>{{ convertNumbers(auth()->user()?->introducer?->username) }}</span>
-                    @endrole
-                @endif
             </div>
             <!--end::Username-->
         </div>
@@ -40,46 +25,6 @@
     <!--begin::Menu separator-->
     <div class="separator my-2"></div>
     <!--end::Menu separator-->
-
-    <!--begin::Menu item-->
-    <div class="menu-item px-5">
-        <a href="{{ auth()->user()->getProfileLink() }}" class="menu-link px-5">
-            پروفایل
-        </a>
-    </div>
-    <!--end::Menu item-->
-
-    @role('client')
-    <!--begin::Menu item-->
-    <div class="menu-item px-5">
-        <a href="{{auth()->user()->getProfileLink('subscriptions')}}" class="menu-link px-5">
-            <span class="menu-text">اشتراک های من</span>
-        </a>
-    </div>
-    <!--end::Menu item-->
-    @endrole
-
-    @role('agent')
-    <!--begin::Menu item-->
-    <div class="menu-item px-5">
-        <a href="{{auth()->user()->getProfileLink('plans')}}" class="menu-link px-5">
-            <span class="menu-text">طرح های من</span>
-            <span class="menu-badge">
-                <span class="badge badge-light-danger badge-circle fw-bolder fs-7">{{convertNumbers(auth()->user()->plans()->wherePivot('remaining_user_count','>',0)->wherePivot('active',1)->count())}}</span>
-            </span>
-        </a>
-    </div>
-    <div class="menu-item px-5">
-        <a href="{{auth()->user()->getProfileLink('clients')}}" class="menu-link px-5">
-            <span class="menu-text">مشتریان من</span>
-            <span class="menu-badge">
-                <span class="badge badge-light-danger badge-circle fw-bolder fs-7">{{convertNumbers(auth()->user()->clients()->count())}}</span>
-            </span>
-        </a>
-    </div>
-    <!--end::Menu item-->
-    @endrole
-
 
     <!--begin::Menu separator-->
     <div class="separator my-2"></div>

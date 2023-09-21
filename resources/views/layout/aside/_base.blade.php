@@ -12,23 +12,23 @@
 	>
     <!--begin::Brand-->
     <div class="d-flex flex-column aside-logo align-items-center py-8" id="kt_aside_logo">
-        <!--begin::Logo-->
-        <a href="{{ theme()->getPageUrl('') }}" class="img-logo d-flex align-items-center">
-            <img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . 'logos/logo.svg') }}" class="h-45px logo"/>
-        </a>
-        <!--end::Logo-->
+{{--        <!--begin::Logo-->--}}
+{{--        <a href="{{ theme()->getPageUrl('') }}" class="img-logo d-flex align-items-center">--}}
+{{--            <img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . 'logos/logo.svg') }}" class="h-45px logo"/>--}}
+{{--        </a>--}}
+{{--        <!--end::Logo-->--}}
 
 		<!--begin::Live DateTime-->
-		<div class="text-logo d-flex align-items-md-center mt-6">
+		<div class="d-flex align-items-md-center mt-6">
             <div class="fs-6">
-               SolidVPN
+               PersianGulf
             </div>
 		</div>
 		<!--end::Live DateTime-->
 
 		<!--begin::Live DateTime-->
 		<div class="d-flex align-items-md-center mt-4">
-            <div class="text-date text-gray-700 fs-7">
+            <div class="text-gray-700 fs-7">
                {{\App\Core\Extensions\Verta\Verta::now()->persianFormat("j F Y")}}
             </div>
 		</div>

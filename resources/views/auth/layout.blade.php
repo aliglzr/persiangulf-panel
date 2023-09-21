@@ -38,7 +38,7 @@
                 <div class="d-flex flex-column align-items-stretch flex-center rounded-4 w-md-600px p-10 bg-login-back"
                      style="backdrop-filter: blur(30px)">
                     <!--begin::Wrapper-->
-                    <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
+                    <div class="d-flex flex-center flex-column flex-column-fluid p-10">
 
                         <!--begin::Form-->
                         <div class="form w-100" novalidate="novalidate">

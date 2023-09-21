@@ -51,22 +51,6 @@
     @endif
     <!--end::Main-->
 
-    @role(['agent','client'])
-        <livewire:layout.modals.wallet-balance.wallet-balance-modal/>
-        <livewire:support.submit-ticket-modal/>
-{{--        <livewire:layout.modals.check-lost-transaction/>--}}
-    @endrole
-
-    @role('agent')
-        <livewire:layout.agent.quick-access.renew-subscription />
-        @php
-        $user = auth()->user();
-        @endphp
-        <livewire:profile.agent.plans.add-subscription :user="$user"/>
-    @endrole
-        @if(auth()->user()->isManager())
-     <livewire:plan.management.change-price />
-        @endif
 
 
 

@@ -13,13 +13,18 @@
 @import "../core/sass/components/mixins";
 @import "../core/sass/vendors/plugins/mixins";
 
-// Custom variables
-@import "components/variables.custom";
-@import "../core/sass/components/variables";
 
 // Bootstrap initializaton
+
 @import "~bootstrap/scss/functions";
+@import "../core/sass/components/variables";
 @import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/variables-dark";
+
+
+// Custom variables
+@import "components/variables.custom";
+
 @import "~bootstrap/scss/maps";
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";

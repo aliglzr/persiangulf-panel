@@ -94,6 +94,7 @@
         "tiny-slider": "^2.9.3",
         "tinymce": "^5.8.2",
         "toastr": "^2.1.4",
+        "typed.js": "^2.0.12",
         "vis-timeline": "^7.4.9",
         "wnumb": "^1.2.0"
     },

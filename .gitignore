@@ -1,18 +1,11 @@
 /node_modules
 .idea
 .vscode
-/public/hot
-/public/storage
-/public/css
-/public/js
-/public/media
-/public/plugins
 /database/ca-certificate.crt
 
 /storage/*.key
 /storage/backup
 /storage/app/backup-temp
-/vendor
 .env
 .env.backup
 .phpunit.result.cache

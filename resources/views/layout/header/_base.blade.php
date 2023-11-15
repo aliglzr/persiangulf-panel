@@ -15,7 +15,7 @@
 		<!--begin::Mobile logo-->
 		<div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
 			<a href="{{ theme()->getPageUrl('') }}" class="d-lg-none">
-				<img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . 'logos/logo.svg') }}" class="h-30px"/>
+{{--				<img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . 'logos/logo.svg') }}" class="h-30px"/>--}}
 			</a>
 		</div>
 		<!--end::Mobile logo-->

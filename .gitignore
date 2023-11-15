@@ -20,7 +20,5 @@ _ide_helper_models.php
 composer.lock
 yarn.lock
 package-lock.json
-
-public/mix-manifest.json
 laravel-echo-server.lock
 laravel-echo-server.json

@@ -62,23 +62,5 @@ class AppServiceProvider extends ServiceProvider
                 array_merge($options, ['path' => $path])
             );
         });
-        if (!env('APP_DEBUG'))
-            Layer::all()->each(function (Layer $layer) {
-                Config::set("database.connections.$layer->id", [
-                    'driver' => 'mysql',
-                    'host' => $layer->db_hostname,
-                    'port' => $layer->db_port,
-                    'database' => $layer->db_name,
-                    'username' => $layer->db_username,
-                    'password' => $layer->db_password,
-                    'unix_socket' => env('DB_SOCKET', ''),
-                    'charset' => 'utf8mb4',
-                    'collation' => 'utf8mb4_unicode_ci',
-                    'prefix' => '',
-                    'prefix_indexes' => true,
-                    'strict' => true,
-                    'engine' => 'InnoDB ROW_FORMAT=DYNAMIC',
-                ]);
-            });
     }
 }

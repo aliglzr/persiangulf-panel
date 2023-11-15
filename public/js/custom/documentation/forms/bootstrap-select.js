@@ -1,0 +1,1 @@
+(()=>{"use strict";var t={init:function(){document.querySelectorAll(".bootstrap-select").forEach((function(t){$(t).selectpicker()}))}};KTUtil.onDOMContentLoaded((function(){t.init()}))})();

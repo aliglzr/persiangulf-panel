@@ -1,0 +1,1 @@
+window.formatBytes=function(t){var o=arguments.length>1&&void 0!==arguments[1]?arguments[1]:2;if(!+t)return"0 Bytes";var a=1024,r=o<0?0:o,n=["بایت","کیلوبایت","مگابایت","گیگا بایت","ترابایت","PB","EB","ZB","YB"],e=Math.floor(Math.log(t)/Math.log(a));return"".concat(parseFloat((t/Math.pow(a,e)).toFixed(r))," ").concat(n[e])};
